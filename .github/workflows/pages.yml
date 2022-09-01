@@ -28,10 +28,17 @@ jobs:
       - name: Write File
         uses: DamianReeves/write-file-action@v1.0
         with:
-          path: ${{ env.home}}/_pages/applist.md
+          path: ${{github.workspace}}/_pages/applist.md
           write-mode: overwrite
           contents: |
             Testing
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'Overwritten by Github Actions - ${date}'
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
