@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 order: 1 
 author_profile: true
 ---
