@@ -43,6 +43,17 @@ jobs:
           user_email: 'pencechris1@gmail.com'
           user_name: 'Griffen8280'
           commit_message: 'Pushing the new AppList.md'
+      - name: Pushes downloaded file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.MAIN_TOKEN }}
+        with:
+          source_file: './_pages/landing.md'
+          destination_repo: 'Griffen8280/webpagetest'
+          destination_folder: '_pages'
+          user_email: 'pencechris1@gmail.com'
+          user_name: 'Griffen8280'
+          commit_message: 'Pushing the new landing.md'
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Build with Jekyll
