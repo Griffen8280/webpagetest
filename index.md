@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: archive
 order: 1 
 ---
 
