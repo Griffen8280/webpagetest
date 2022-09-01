@@ -1,7 +1,7 @@
 ---
 title: "App List"
 permalink: /applist/
-layout: default
+layout: single
 date: 2022-09-01
 ---
 
