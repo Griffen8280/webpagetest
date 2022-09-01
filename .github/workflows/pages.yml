@@ -25,21 +25,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: curl
-        uses: wei/curl@master
-        with:
-          args: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/AppList.md
-      - name: Pushes test file
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.MAIN_TOKEN }}
-        with:
-          source_file: 'AppList.md'
-          destination_repo: 'Griffen8280/webpagetest'
-          destination_folder: '_pages'
-          user_email: 'pencechris1@gmail.com'
-          user_name: 'Griffen8280'
-          commit_message: 'Grabbing the latest applist'
+      - name: Download a file
+        run: wget https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/AppList.md -O /_pages/AppList.md
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
