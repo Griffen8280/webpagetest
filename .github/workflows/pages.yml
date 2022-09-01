@@ -25,12 +25,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: curl
+        uses: wei/curl@master
+        with:
+          args: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/AppList.md
       - name: Pushes test file
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.MAIN_TOKEN }}
         with:
-          source_file: 'https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/AppList.md'
+          source_file: 'AppList.md'
           destination_repo: 'Griffen8280/webpagetest'
           destination_folder: '_pages'
           user_email: 'pencechris1@gmail.com'
