@@ -1,11 +1,11 @@
 # main links
 main:
   - title: "App List"
-    url: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/AppList.md
-  - title: "About"
-    url: /about/
-  #- title: "Sample Posts"
-  #  url: /year-archive/
+    url: /applist/
+  - title: "Video Tutorials"
+    url: https://youtube.com/playlist?list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc
+  - title: "Documentation"
+    url: https://github.com/pi-hosted/pi-hosted/tree/master/docs
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
