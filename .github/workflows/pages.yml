@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run getlist Script
-        run: ${PWD}/build/getlist
+        run: ${PWD}/build/getlist.sh
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
