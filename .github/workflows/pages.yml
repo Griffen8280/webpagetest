@@ -25,20 +25,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Write File
-        uses: DamianReeves/write-file-action@v1.0
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.MAIN_TOKEN }}
         with:
-          path: ${{github.workspace}}/_pages/applist.md
-          write-mode: overwrite
-          contents: |
-            Testing
-      - name: Commit & Push
-        uses: Andro999b/push@v1.3
-        with:
-          github_token: ${{ secrets.MAIN_TOKEN }}
-          branch: main
-          force: true
-          message: 'Overwritten by Github Actions - ${date}'
+          source_file: 'https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/docs/AppList.md'
+          destination_repo: 'Griffen8280/webpagetest'
+          destination_folder: '_pages'
+          user_email: 'pencechris1@gmail.com'
+          user_name: 'Griffen8280'
+          commit_message: 'Grabbing the latest applist'
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
