@@ -1,5 +1,4 @@
 ---
-title: home
 layout: home
 order: 1 
 ---
