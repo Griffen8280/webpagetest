@@ -25,14 +25,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Run script file
         run: |
            chmod +x ./build/getlist.sh
            ./build/getlist.sh
         shell: bash
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Pushes downloaded file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.MAIN_TOKEN }}
+        with:
+          source_file: './_pages/AppList.md'
+          destination_repo: 'Griffen8280/webpagetest'
+          destination_folder: '_pages'
+          user_email: 'pencechris1@gmail.com'
+          user_name: 'Griffen8280'
+          commit_message: 'Pushing the new AppList.md'
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Build with Jekyll
